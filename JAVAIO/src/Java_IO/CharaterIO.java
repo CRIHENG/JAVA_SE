@@ -4,15 +4,16 @@ import org.junit.Test;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 /**
  * Created by githu on 2017/11/17.
  */
-public class LearnFileReader {
+public class CharaterIO {
     
     @Test
-    public void demo01(){
+    public void  learnFileReader(){
         FileReader reader=null;
      try {
          reader=new FileReader("E:\\内功\\JAVA_SE\\JAVAIO\\src\\Java_IO\\LearnFileReader.java");
@@ -27,4 +28,19 @@ public class LearnFileReader {
          System.out.println("异常");
      }
 }
+    @Test
+    public  void learnFileWriter(){
+        FileWriter writer=null;
+
+        try {
+            writer=new FileWriter("E:\\内功\\JAVA_SE\\JAVAIO\\src\\Java_IO\\code.java");
+            for(int i=0; i<50000;i++){
+                writer.write(i);
+            }
+        }catch (FileNotFoundException e){
+            System.out.println("系统找不到指定文件");
+        }catch (IOException e){
+            System.out.println("文件异常");
+        }
+    }
 }
