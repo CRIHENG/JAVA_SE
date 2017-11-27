@@ -65,5 +65,6 @@ public class BufferSpace {
         System.out.println(bb.position());
         bb.reset();
         System.out.println(bb.position());
+        if(bb.hasRemaining()) System.out.println(bb.remaining());
     }
 }
